@@ -1,9 +1,9 @@
 import axios from 'axios'
 import React, { useState, useEffect } from 'react'
+import Input from '../../components/Ui/Input'
 
 const index = () => {
     const [countries, setCountries] = useState([])
-
     useEffect(() => {
         axios.get('https://restcountries.com/v2/all').then((response) => setCountries(response.data))
     }, [])
@@ -21,7 +21,7 @@ const index = () => {
                 <div className='flex justify-between items-center'>
                     <div className='flex items-center border max-w-[480px] py-4 rounded-[5px] px-8 shadow-lg hover:shadow-2xl hover:cursor-text gap-6 duration-200'>
                         <i className='bx bx-search text-[#848484] text-lg'></i>
-                        <input type="text" placeholder='Search for a country…' className='w-[480px] focus:outline-none placeholder:text-[#848484] text-sm' />
+                        <Input />
                     </div>
 
                     <select className='cursor-pointer px-6 py-4 shadow-md border hover:shadow-xl duration-200 focus:outline-none'>
@@ -34,7 +34,7 @@ const index = () => {
                         countries.map((el, index) => {
                             return (
                                 <div className="card w-[270px] rounded-[5px] shadow-lg hover:shadow-2xl duration-300" key={index}>
-                                    <div className='w-[270px] h-[160px] border'>
+                                    <div className='w-[270px] h-[160px] border overflow-hidden'>
                                         <img src={el.flag} alt="flag" className='h-[160px] object-cover object-center w-full' />
                                     </div>
                                     <div className='px-6 pt-6 pb-[46px]'>
@@ -49,8 +49,6 @@ const index = () => {
                             )
                         })
                     }
-
-
                 </div>
             </div>
         </main>
