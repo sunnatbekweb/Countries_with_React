@@ -7,7 +7,7 @@
   margin: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
-  font-family: 'Nunito Sans', sans-serif;
+  font-family: "Nunito Sans", sans-serif;
 }
 
 .container {
@@ -21,20 +21,20 @@
   font-size: 48px;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
-  color: #FFF;
+  color: #fff;
   position: relative;
 }
 
 .loader::before {
-  content: '';
+  content: "";
   position: absolute;
   left: 34px;
   bottom: 8px;
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  border: 5px solid #FFF;
-  border-bottom-color: #FF3D00;
+  border: 5px solid #fff;
+  border-bottom-color: #ff3d00;
   box-sizing: border-box;
   animation: rotation 0.6s linear infinite;
 }
@@ -47,4 +47,11 @@
   100% {
     transform: rotate(360deg);
   }
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  column-gap: 20px;
+  row-gap: 30px;
 }
